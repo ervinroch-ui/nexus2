@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nexus · Control Gerencial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+  <div id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <div class="brand-lockup"><div class="brand-mark">N</div><div><strong>NEXUS</strong><span>CONTROL GERENCIAL</span></div></div>
+      <p class="eyebrow">PLATAFORMA DE GESTIÓN</p>
+      <h1>Ingresá a tu espacio de trabajo</h1>
+      <p class="muted">Indicadores, productividad, solicitudes y control operativo en un solo lugar.</p>
+      <form id="loginForm" class="login-form">
+        <label>Usuario<input id="loginUsername" autocomplete="username" placeholder="Tu usuario" required></label>
+        <label>Contraseña<input id="loginPassword" type="password" autocomplete="current-password" placeholder="Tu contraseña" required></label>
+        <p id="loginError" class="form-error" aria-live="polite"></p>
+        <button class="btn btn-primary btn-wide" type="submit">Iniciar sesión <span>→</span></button>
+      </form>
+      <div class="login-foot"><span class="status-dot"></span> Acceso protegido · Control de permisos</div>
+    </div>
+    <div class="login-aside"><div class="aside-orbit orbit-a"></div><div class="aside-orbit orbit-b"></div><div class="aside-copy"><span>DATOS QUE MUEVEN</span><h2>La operación.<br>La estrategia.<br>Los resultados.</h2><p>Una visión integrada de la gestión comercial y operativa.</p></div><div class="aside-footer">NEXUS · GERENCIA</div></div>
+  </div>
+
+  <div id="appShell" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="sidebar-brand"><div class="brand-mark">N</div><div><strong>NEXUS</strong><span>GERENCIA</span></div></div>
+      <div class="side-caption">ESPACIO DE TRABAJO</div>
+      <nav id="mainNav" class="main-nav">
+        <button data-page="overview" class="nav-item active"><span class="nav-icon">◫</span><span>Dashboard gerencial</span></button>
+        <button data-page="multimedia" class="nav-item"><span class="nav-icon">▦</span><span>Multimedia</span></button>
+        <button data-page="rosters" class="nav-item"><span class="nav-icon">♙</span><span>Estructura de equipos</span></button>
+        <button data-page="conecta" class="nav-item"><span class="nav-icon">⌁</span><span>Conecta / Pospago</span></button>
+        <button data-page="solicitudes" class="nav-item"><span class="nav-icon">▤</span><span>Solicitudes</span></button>
+        <button data-page="fuel" class="nav-item"><span class="nav-icon">◉</span><span>Combustible</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-caption">ADMINISTRACIÓN</div>
+        <button data-page="admin" class="nav-item admin-nav"><span class="nav-icon">⚙</span><span>Administración</span></button>
+        <div class="sidebar-help"><div class="help-icon">?</div><div><b>Centro de ayuda</b><span>Guía y soporte de uso</span></div></div>
+        <div class="sidebar-version">NEXUS GERENCIAL <span>v1.0 · LOCAL</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="mobile-brand"><div class="brand-mark">N</div><strong>NEXUS</strong></div>
+        <div class="topbar-title"><span class="breadcrumb-muted">Gestión /</span> <b id="pageCrumb">Dashboard gerencial</b></div>
+        <div class="topbar-actions"><span class="topbar-date" id="topbarDate">Noviembre 2026</span><button id="editToggle" class="btn btn-outline hidden" type="button">✎ Editar datos</button><div class="user-menu"><div class="avatar" id="userAvatar">ER</div><div class="user-ident"><b id="userName">Usuario</b><span id="userRole">Administrador</span></div><button id="logoutBtn" class="icon-button" title="Cerrar sesión">↪</button></div></div>
+      </header>
+
+      <section class="filterbar">
+        <div class="filter-intro"><div class="filter-icon">▦</div><div><b>Filtro de período</b><span>Rango de fechas y gerencia</span></div></div>
+        <label>Fecha inicio<input type="date" id="dateStart" value="2026-11-01"></label>
+        <label>Fecha fin<input type="date" id="dateEnd" value="2026-11-22"></label>
+        <label>Filtro gerencia<select id="managementFilter"><option>Pacífico</option><option>Multimedia</option><option>Suroriente</option><option>Managua Oeste</option><option>Managua Este</option><option>Todas</option></select></label>
+        <button id="applyFilter" class="btn btn-primary">⚑ Aplicar</button>
+        <button id="resetFilter" class="icon-button reset-button" title="Restablecer filtros">↺</button>
+        <div class="filter-status"><span id="periodLabel">01/11/2026 — 22/11/2026</span><small id="filterChip">✓ Filtro activo · Pacífico</small></div>
+      </section>
+
+      <div id="pageContent" class="page-content"></div>
+      <footer class="page-footer"><span>© 2026 NEXUS · Control Gerencial</span><span>Datos de referencia y archivos de importación</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="static/app.js"></script>
+</body>
+</html>
